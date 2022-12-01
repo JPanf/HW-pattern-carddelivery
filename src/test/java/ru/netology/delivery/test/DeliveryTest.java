@@ -17,7 +17,7 @@ class DeliveryTest {
     @BeforeEach
     void setup() {
         open("http://localhost:9999");
-        Configuration.holdBrowserOpen = true;
+        //Configuration.holdBrowserOpen = true;
     }
 
     @Test
@@ -39,7 +39,7 @@ class DeliveryTest {
         $x("//span[@class='button__text']").click();
         $("[data-test-id=success-notification]").shouldBe(Condition.visible, Duration.ofSeconds(15));
         $("[data-test-id='success-notification'] .notification__content").shouldHave(Condition.exactText("Встреча успешно запланирована на " + firstMeetingDate));
-        $x("//input[@placeholder='Дата встречи']").sendKeys(Keys.DELETE);
+        $x("//input[@placeholder='Дата встречи']").doubleClick().sendKeys(Keys.DELETE);
         $x("//input[@placeholder='Дата встречи']").setValue(secondMeetingDate);
         $x("//span[@class='button__text']").click();
         $x("//*[contains(text(),'Успешно!')]").shouldBe(Condition.visible, Duration.ofSeconds(15));
