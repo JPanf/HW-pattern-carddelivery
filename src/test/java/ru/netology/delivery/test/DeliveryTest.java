@@ -17,7 +17,7 @@ class DeliveryTest {
     @BeforeEach
     void setup() {
         open("http://localhost:9999");
-        Configuration.holdBrowserOpen = true;
+        //Configuration.holdBrowserOpen = true;
     }
 
     @Test
@@ -30,7 +30,7 @@ class DeliveryTest {
         var secondMeetingDate = DataGenerator.generateDate(daysToAddForSecondMeeting);
         $("[data-test-id='city'] input").setValue(validUser.getCity());
         $("[data-test-id=\"date\"]").click();
-        $x("//input[@placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.CONTROL + "a"), Keys.BACK_SPACE);
+        $x("//input[@placeholder='Дата встречи']").doubleClick().sendKeys(Keys.DELETE);//(Keys.chord(Keys.CONTROL + "a"), Keys.BACK_SPACE);
         $x("//input[@placeholder='Дата встречи']").setValue(firstMeetingDate);
         $x("//input[@name='name']").setValue(validUser.getName());
         $("[data-test-id=\"phone\"] .input__control").setValue(validUser.getPhone());
