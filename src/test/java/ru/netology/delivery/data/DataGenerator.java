@@ -23,8 +23,8 @@ public class DataGenerator {
         /*Faker faker = new Faker(new Locale("ru"));
         String city = faker.address().cityName();
         return city*/
-        var cities = new String[]{"Москва", "Уфа", "Санкт-Петербург", "Казань", "Самара", "Йошкар-Ола", "Майкоп", "Ижевск",
-                "Барнаул", "Краснодар"};
+        var cities = new String[]{"Москва", "Краснодар", "Санкт-Петербург", "Казань", "Ростов-на-Дону", "Петропавловск-Камчатский", "Кострома", "Салехард",
+                "Саранск", "Севастополь"};
         return cities[new Random().nextInt(cities.length)];
     }
 
